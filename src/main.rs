@@ -28,7 +28,7 @@ fn main() -> std::io::Result<()> {
     
 
     // The available hash algorithms
-    let hash_algorithms = vec!["SHA-256", "MD5"];
+    let hash_algorithms = vec!["SHA-256", "MD5", "SHA1"];
 
     // Makes a selection menu in the terminal with the available algs
     let selection = Select::with_theme(&ColorfulTheme::default())
@@ -60,6 +60,20 @@ fn main() -> std::io::Result<()> {
                 if check == 1 {
                     //println!("{:?}", checksum_str);
                     if algorithms::calc_md5(filepath) == checksum_str {
+                        println!("It's a match");
+                    }
+                    else{
+                        println!("It doesn't match");
+                    }
+                }
+            } else if hash_algorithms[index] == "SHA1" {
+                println!(
+                    "The SHA1 checksum for the file is: {}",
+                    algorithms::calc_sha1(filepath)
+                );
+                if check == 1 {
+                    //println!("{:?}", checksum_str);
+                    if algorithms::calc_sha1(filepath) == checksum_str {
                         println!("It's a match");
                     }
                     else{
