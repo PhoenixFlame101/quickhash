@@ -1,4 +1,5 @@
 use md5;
+use sha1::Sha1;
 use sha2::{Digest, Sha256};
 use sha1::{Sha1};
 use std::io::{BufRead, BufReader};
@@ -29,6 +30,7 @@ pub fn calc_sha256(filepath: &str) -> String {
     //hasher.update(file_as_bytes);
     
     let hash = hasher.finalize();
+
 
     //let hash = Sha256::digest(file_as_bytes);
     format!("{:x}", hash)
