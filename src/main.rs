@@ -76,7 +76,7 @@ fn main() -> std::io::Result<()> {
     // Makes a selection menu in the terminal with the available algs
     let selection = Select::with_theme(&ColorfulTheme::default())
         .items(&hash_algorithms)
-        .default(0)
+        .default(1)
         .interact_on_opt(&Term::stderr())?;
 
     let start = Instant::now();

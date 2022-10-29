@@ -5,7 +5,7 @@ use std::io::{BufRead, BufReader};
 
 pub fn calc_sha256(filepath: &str) -> String {
     //println!("{}", filepath);
-    const CAP: usize = 512 * 64; 
+    const CAP: usize = 10*1024*1024; 
     let file = match std::fs::File::open(filepath) {
         Ok(file) => file,
         Err(_) => panic!("no such file"),
@@ -38,7 +38,7 @@ pub fn calc_md5(filepath: &str) -> String {
     // let file_as_bytes = std::fs::read(filepath).unwrap();
     // let hash = md5::compute(file_as_bytes);
 
-    const CAP: usize = 512 * 64; 
+    const CAP: usize = 10*1024*1024; 
     let file = match std::fs::File::open(filepath) {
         Ok(file) => file,
         Err(_) => panic!("no such file"),
@@ -69,7 +69,7 @@ pub fn calc_sha1(filepath: &str) -> String {
     // let file_as_bytes = std::fs::read(filepath).unwrap();
     // let hash = Sha1::digest(file_as_bytes);
 
-    const CAP: usize = 512 * 64; 
+    const CAP: usize = 10*1024*1024; 
     let file = match std::fs::File::open(filepath) {
         Ok(file) => file,
         Err(_) => panic!("no such file"),
