@@ -1,7 +1,6 @@
 use md5;
 use sha1::Sha1;
 use sha2::{Digest, Sha256};
-use sha1::{Sha1};
 use std::io::{BufRead, BufReader};
 
 pub fn calc_sha256(filepath: &str) -> String {
