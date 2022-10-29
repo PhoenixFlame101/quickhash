@@ -8,6 +8,7 @@ quickhash can calculate file hashes using the following cryptographic hash algor
 
  - SHA-256
  - MD5
+ - SHA-1
 
 ### Building
 
